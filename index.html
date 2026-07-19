@@ -344,6 +344,19 @@
       .hero-h1 { font-size: 36px; }
       .hero-btns { flex-direction: column; align-items: flex-start; }
     }
+    /* POPUP CẢM ƠN */
+    .popup-overlay { position: fixed; inset: 0; background: rgba(36,33,16,0.72); backdrop-filter: blur(5px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .popup-overlay.active { opacity: 1; pointer-events: all; }
+    .popup-card { background: var(--cream); border-radius: 28px; padding: 52px 44px 44px; max-width: 420px; width: 90%; text-align: center; transform: scale(0.90) translateY(20px); transition: transform 0.35s cubic-bezier(.22,.88,.36,1); box-shadow: 0 48px 120px rgba(0,0,0,0.45); }
+    .popup-overlay.active .popup-card { transform: scale(1) translateY(0); }
+    .popup-icon { width: 68px; height: 68px; background: var(--golden); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 22px; }
+    .popup-icon i { font-size: 30px; color: var(--palm); }
+    .popup-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--palm); font-weight: 400; margin-bottom: 12px; line-height: 1.2; }
+    .popup-name { color: var(--golden); font-style: italic; }
+    .popup-msg { font-size: 15px; color: var(--olive); line-height: 1.75; margin-bottom: 30px; }
+    .popup-msg strong { color: var(--palm); font-weight: 600; }
+    .popup-close { background: var(--golden); color: var(--palm); border: none; padding: 15px 44px; border-radius: 12px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+    .popup-close:hover { background: #d4a44e; transform: translateY(-1px); }
   </style>
 </head>
 <body>
@@ -583,6 +596,16 @@
     </div>
   </footer>
 
+  <!-- POPUP CẢM ƠN -->
+  <div class="popup-overlay" id="popup-thankyou">
+    <div class="popup-card">
+      <div class="popup-icon"><i class="ti ti-check"></i></div>
+      <div class="popup-title">Cảm ơn<br><span class="popup-name" id="popup-name-display"></span></div>
+      <p class="popup-msg">Chúng tôi đã nhận được thông tin của bạn.<br>Tư vấn viên Palm River sẽ liên hệ trong vòng <strong>24h</strong>.</p>
+      <button class="popup-close" onclick="document.getElementById('popup-thankyou').classList.remove('active')">Đã hiểu</button>
+    </div>
+  </div>
+
   <script>
     const GAS_URL = 'https://script.google.com/macros/s/AKfycbwS3HXxGSfYlJkUaNKRAeru631yxGxhhWm2k-fX-itY7nEK9BNajcSYr88SUyIaBAqy/exec';
 
@@ -610,12 +633,15 @@
       .then(r => r.json())
       .then(data => {
         if (data.success) {
-          btn.textContent = 'Đã gửi — cảm ơn bạn!';
-          btn.style.background = 'var(--palm-mid)';
+          document.getElementById('popup-name-display').textContent = name;
+          document.getElementById('popup-thankyou').classList.add('active');
           ['f-name','f-phone','f-email','f-unit','f-note'].forEach(id => {
             const el = document.getElementById(id);
             if (el) el.value = '';
           });
+          btn.disabled = false;
+          btn.textContent = 'Gửi yêu cầu tư vấn';
+          btn.style.background = '';
         } else {
           throw new Error('GAS returned error');
         }
