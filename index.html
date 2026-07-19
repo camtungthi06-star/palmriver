@@ -269,34 +269,40 @@
     .loc-time { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--palm); font-weight: 400; margin-left: auto; }
 
     /* BOOKING */
-    .lp-booking { background: var(--cream); padding: 96px 64px; }
-    .bk-inner { max-width: 800px; margin: 0 auto; }
-    .bk-badge { display: inline-block; background: var(--golden); color: var(--earthy); padding: 5px 16px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
-    .bk-h2 { font-family: 'Cormorant Garamond', serif; font-size: 52px; color: var(--palm); font-weight: 400; line-height: 1.1; margin-bottom: 14px; text-align: center; }
-    .bk-p { font-size: 15px; color: var(--olive); max-width: 460px; margin: 0 auto 40px; line-height: 1.7; text-align: center; }
-    .bk-info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 36px; }
-    .bk-card { background: var(--white); border-radius: 16px; padding: 24px; border: 0.5px solid rgba(172,176,152,0.35); }
-    .bk-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--palm-light); margin-bottom: 6px; }
-    .bk-val { font-family: 'Cormorant Garamond', serif; font-size: 25px; color: var(--palm); font-weight: 500; line-height: 1.2; }
-    .bk-note { font-size: 11px; color: var(--palm-light); margin-top: 4px; }
-    .bk-form { background: var(--white); border-radius: 20px; padding: 36px; border: 0.5px solid rgba(172,176,152,0.35); }
-    .bk-form-h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--palm); font-weight: 400; margin-bottom: 24px; }
+    .lp-booking { background: #242110; padding: 96px 64px; position: relative; overflow: hidden; }
+    .lp-booking::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 8% 60%, rgba(92,90,40,0.35) 0%, transparent 55%), radial-gradient(ellipse at 95% 95%, rgba(82,50,38,0.25) 0%, transparent 50%); pointer-events: none; }
+    .bk-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+    .bk-eyebrow { display: flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--golden); margin-bottom: 22px; }
+    .bk-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--golden); flex-shrink: 0; }
+    .bk-h2 { font-family: 'Cormorant Garamond', serif; font-size: 50px; color: var(--cream); font-weight: 400; line-height: 1.15; margin-bottom: 18px; text-align: left; }
+    .bk-h2 em { color: var(--golden); font-style: italic; }
+    .bk-p { font-size: 15px; color: rgba(243,237,216,0.62); line-height: 1.75; margin-bottom: 36px; text-align: left; max-width: none; }
+    .bk-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .bk-bullets li { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: rgba(243,237,216,0.75); line-height: 1.5; }
+    .bk-bullets li::before { content: '+'; color: var(--golden); font-size: 18px; font-weight: 300; flex-shrink: 0; line-height: 1.4; }
+    .bk-form { background: var(--cream); border-radius: 24px; padding: 40px; border: none; box-shadow: 0 32px 80px rgba(0,0,0,0.45); }
+    .bk-form-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--palm); font-weight: 400; margin-bottom: 6px; text-align: center; }
+    .bk-form-sub { font-size: 12px; color: var(--palm-light); text-align: center; margin-bottom: 28px; letter-spacing: 0.3px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-    .fg { display: flex; flex-direction: column; gap: 6px; }
-    .fg label { font-size: 11px; color: var(--olive); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
-    .fg input, .fg select {
-      border: 0.5px solid rgba(172,176,152,0.5); border-radius: 10px;
+    .fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .fg label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--palm); }
+    .fg label span { color: var(--earthy); margin-left: 2px; }
+    .fg input, .fg select, .fg textarea {
+      border: 1px solid rgba(73,68,27,0.18); border-radius: 10px;
       padding: 13px 14px; font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 14px; color: var(--earthy); background: var(--cream); outline: none; transition: border-color 0.2s;
+      font-size: 14px; color: var(--palm); background: rgba(255,255,255,0.7); outline: none; transition: border-color 0.2s;
     }
-    .fg input:focus, .fg select:focus { border-color: var(--palm-mid); }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--golden); background: white; }
     .fg select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+    .fg textarea { resize: none; min-height: 88px; line-height: 1.5; }
     .form-submit {
-      width: 100%; margin-top: 10px; background: var(--palm); color: var(--cream);
+      width: 100%; margin-top: 6px; background: var(--golden); color: var(--palm);
       border: none; padding: 17px; font-family: 'Be Vietnam Pro', sans-serif;
-      font-size: 15px; font-weight: 500; border-radius: 12px; cursor: pointer; transition: background 0.2s;
+      font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      border-radius: 12px; cursor: pointer; transition: background 0.2s, transform 0.15s;
     }
-    .form-submit:hover { background: var(--palm-mid); }
+    .form-submit:hover { background: #d4a44e; transform: translateY(-1px); }
+    .bk-privacy { font-size: 11px; color: var(--palm-light); text-align: center; margin-top: 14px; line-height: 1.5; }
 
     /* FOOTER */
     .lp-footer { background: var(--earthy); padding: 60px 64px; }
@@ -323,16 +329,17 @@
       .lp-lifestyle { padding: 0 24px 60px; }
       .ls-inner { padding: 40px 28px; }
       .lp-stats { grid-template-columns: repeat(2, 1fr); padding: 48px 24px; }
-      .bk-info { grid-template-columns: 1fr 1fr; }
+      .bk-inner { grid-template-columns: 1fr; gap: 48px; }
+      .bk-h2 { font-size: 38px; }
       .ft-grid { grid-template-columns: 1fr; gap: 32px; }
       .lp-footer { padding: 48px 24px; }
       .hero-img { display: none; }
       .hero-bg-river { opacity: 0.18; }
       .palm-accent { opacity: 0.22; }
-      .bk-h2, .pain-h2 { font-size: 38px; }
+      .pain-h2 { font-size: 38px; }
     }
     @media (max-width: 560px) {
-      .pain-grid, .feat-grid, .bk-info { grid-template-columns: 1fr; }
+      .pain-grid, .feat-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .hero-h1 { font-size: 36px; }
       .hero-btns { flex-direction: column; align-items: flex-start; }
@@ -508,45 +515,38 @@
   <!-- BOOKING -->
   <section class="lp-booking" id="booking">
     <div class="bk-inner">
-      <div style="text-align: center"><span class="bk-badge">Đang nhận đặt chỗ</span></div>
-      <h2 class="bk-h2">Giữ chỗ ưu tiên trước<br>khi mở bán chính thức.</h2>
-      <p class="bk-p">Dự án dự kiến mở bán quý 4/2026. Đặt chỗ ngay để nhận ưu đãi đặc biệt và cập nhật thông tin sớm nhất từ chủ đầu tư.</p>
-      <div class="bk-info">
-        <div class="bk-card">
-          <div class="bk-lbl">Giá dự kiến</div>
-          <div class="bk-val">~180 tr/m²</div>
-          <div class="bk-note">Chưa có giá chính thức</div>
-        </div>
-        <div class="bk-card">
-          <div class="bk-lbl">Tình trạng</div>
-          <div class="bk-val">Đang booking</div>
-          <div class="bk-note">Đặt chỗ ưu tiên</div>
-        </div>
-        <div class="bk-card">
-          <div class="bk-lbl">Mở bán dự kiến</div>
-          <div class="bk-val">Quý 4 / 2026</div>
-          <div class="bk-note">Nhận thông tin sớm nhất</div>
-        </div>
+      <div class="bk-left">
+        <div class="bk-eyebrow">Đăng ký tư vấn</div>
+        <h2 class="bk-h2">Nhận bảng giá,<br>chính sách & <em>ưu đãi</em><br>mới nhất</h2>
+        <p class="bk-p">Để lại thông tin — đội ngũ tư vấn Palm River sẽ liên hệ gửi bảng giá chi tiết, chính sách thanh toán và thông tin mặt bằng căn hộ trong thời gian sớm nhất.</p>
+        <ul class="bk-bullets">
+          <li>Bảng giá & chính sách thanh toán chi tiết</li>
+          <li>Tư vấn chọn căn view đẹp, giá tốt</li>
+          <li>Ưu đãi chiết khấu booking sớm</li>
+          <li>Cập nhật lịch mở bán sớm nhất</li>
+        </ul>
       </div>
       <div class="bk-form">
-        <h3 class="bk-form-h3">Để lại thông tin — tư vấn viên liên hệ trong 24h</h3>
+        <div class="bk-form-title">Đăng ký tư vấn miễn phí</div>
+        <div class="bk-form-sub">Bảo mật thông tin · Phản hồi trong 24h</div>
         <div class="form-row">
-          <div class="fg"><label>Họ và tên</label><input type="text" placeholder="Nguyễn Văn A"></div>
-          <div class="fg"><label>Số điện thoại</label><input type="tel" placeholder="0901 234 567"></div>
+          <div class="fg"><label>Họ và tên <span>*</span></label><input id="f-name" type="text" placeholder="Nguyễn Văn A"></div>
+          <div class="fg"><label>Số điện thoại <span>*</span></label><input id="f-phone" type="tel" placeholder="09xx xxx xxx"></div>
         </div>
-        <div class="form-row">
-          <div class="fg"><label>Email</label><input type="email" placeholder="email@example.com"></div>
-          <div class="fg">
-            <label>Nhu cầu</label>
-            <select>
-              <option>Mua để ở</option>
-              <option>Đầu tư cho thuê</option>
-              <option>Mua tặng gia đình</option>
-              <option>Tìm hiểu thêm</option>
-            </select>
-          </div>
+        <div class="fg"><label>Email</label><input id="f-email" type="email" placeholder="email@cua-ban.com"></div>
+        <div class="fg">
+          <label>Loại căn quan tâm</label>
+          <select id="f-unit">
+            <option value="">-- Chọn loại căn --</option>
+            <option>Mua để ở</option>
+            <option>Đầu tư cho thuê</option>
+            <option>Mua tặng gia đình</option>
+            <option>Tìm hiểu thêm</option>
+          </select>
         </div>
-        <button class="form-submit">Đặt chỗ ngay — miễn phí, không ràng buộc</button>
+        <div class="fg"><label>Ghi chú</label><textarea id="f-note" placeholder="Nhu cầu của bạn..."></textarea></div>
+        <button id="f-submit" class="form-submit">Gửi yêu cầu tư vấn</button>
+        <p class="bk-privacy">Thông tin của bạn được bảo mật & chỉ dùng để tư vấn dự án.</p>
       </div>
     </div>
   </section>
@@ -583,5 +583,49 @@
     </div>
   </footer>
 
+  <script>
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbwS3HXxGSfYlJkUaNKRAeru631yxGxhhWm2k-fX-itY7nEK9BNajcSYr88SUyIaBAqy/exec';
+
+    document.getElementById('f-submit').addEventListener('click', function () {
+      const btn = this;
+      const name  = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const unit  = document.getElementById('f-unit').value;
+      const note  = document.getElementById('f-note').value.trim();
+
+      if (!name || !phone) {
+        alert('Vui lòng điền họ tên và số điện thoại.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Đang gửi...';
+
+      fetch(GAS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ name, phone, email, unit, note })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          btn.textContent = 'Đã gửi — cảm ơn bạn!';
+          btn.style.background = 'var(--palm-mid)';
+          ['f-name','f-phone','f-email','f-unit','f-note'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+          });
+        } else {
+          throw new Error('GAS returned error');
+        }
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = 'Gửi yêu cầu tư vấn';
+        alert('Có lỗi xảy ra — vui lòng thử lại hoặc liên hệ trực tiếp.');
+      });
+    });
+  </script>
 </body>
 </html>
