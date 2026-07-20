@@ -15,7 +15,7 @@
       --palm:       #3D3B14;
       --palm-mid:   #5F5D28;
       --palm-light: #8A8952;
-      --earthy:     #4A2A14;
+      --earthy:     #3A2C1E;
       --golden:     #ECB95F;
       --olive:      #5F5D28;
       --sunlit:     #6B6930;
@@ -23,10 +23,10 @@
       --water:      #7CA3B8;
       --sand:       #C49060;
       /* 4-Element deep section backgrounds */
-      --earth-dark: #1C0E06;
-      --water-dark: #061A27;
+      --earth-dark: #16120E;
+      --water-dark: #083546;
       --wood-dark:  #0D1809;
-      --light-dark: #1E1504;
+      --light-dark: #2C2008;
     }
 
     @keyframes sway1 {
@@ -275,8 +275,8 @@
     .loc-time { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--palm); font-weight: 400; margin-left: auto; }
 
     /* BOOKING */
-    .lp-booking { background: var(--earth-dark); padding: 96px 64px; position: relative; overflow: hidden; }
-    .lp-booking::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 8% 60%, rgba(92,90,40,0.35) 0%, transparent 55%), radial-gradient(ellipse at 95% 95%, rgba(82,50,38,0.25) 0%, transparent 50%); pointer-events: none; }
+    .lp-booking { background: var(--wood-dark); padding: 96px 64px; position: relative; overflow: hidden; }
+    .lp-booking::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 10% 65%, rgba(95,93,40,0.28) 0%, transparent 55%), radial-gradient(ellipse at 90% 20%, rgba(138,137,82,0.12) 0%, transparent 45%); pointer-events: none; }
     .bk-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
     .bk-eyebrow { display: flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--golden); margin-bottom: 22px; }
     .bk-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--golden); flex-shrink: 0; }
