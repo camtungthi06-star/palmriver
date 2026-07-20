@@ -11,17 +11,17 @@
     html { scroll-behavior: smooth; }
     :root {
       /* Base palette */
-      --cream:      #EDE5C5;
-      --palm:       #3D3B14;
-      --palm-mid:   #5F5D28;
-      --palm-light: #8A8952;
-      --earthy:     #3A2C1E;
-      --golden:     #ECB95F;
-      --olive:      #5F5D28;
-      --sunlit:     #6B6930;
+      --cream:      #F3EEE3;
+      --palm:       #1A2B14;
+      --palm-mid:   #2D4A22;
+      --palm-light: #6A8A5A;
+      --earthy:     #201C14;
+      --golden:     #C8962F;
+      --olive:      #4A5E36;
+      --sunlit:     #6B7A3C;
       --white:      #FFFFFF;
-      --water:      #7CA3B8;
-      --sand:       #C49060;
+      --water:      #5D93AA;
+      --sand:       #B8854E;
       /* 4-Element deep section backgrounds */
       --earth-dark: #16120E;
       --water-dark: #083546;
@@ -54,7 +54,7 @@
     /* NAV */
     .lp-nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(240,234,216,0.95);
+      background: rgba(243,238,227,0.95);
       backdrop-filter: blur(12px);
       border-bottom: 0.5px solid rgba(43,59,39,0.15);
       padding: 18px 64px;
@@ -93,7 +93,7 @@
       padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 600;
       letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;
     }
-    .hero-h1 { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 400; line-height: 1.05; color: var(--palm); margin-bottom: 16px; }
+    .hero-h1 { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 400; line-height: 1.02; color: var(--palm); margin-bottom: 16px; }
     .hero-h1 em { font-style: italic; color: var(--palm-mid); }
     .hero-sub { font-size: 15px; line-height: 1.8; color: var(--olive); max-width: 440px; margin-bottom: 36px; }
     .hero-btns { display: flex; gap: 12px; align-items: center; margin-bottom: 52px; }
@@ -193,7 +193,7 @@
     .fc-val { font-family: 'Cormorant Garamond', serif; font-size: 21px; color: var(--palm); font-weight: 500; margin-top: 2px; }
 
     /* PAIN */
-    .lp-pain { background: var(--water-dark); padding: 96px 64px; }
+    .lp-pain { background: var(--wood-dark); padding: 96px 64px; }
     .sec-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--golden); margin-bottom: 14px; font-weight: 500; }
     .pain-h2 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; color: var(--cream); line-height: 1.1; max-width: 680px; margin-bottom: 20px; }
     .pain-h2 em { font-style: italic; color: var(--palm-light); }
@@ -219,7 +219,7 @@
     .feat-desc { font-size: 15px; color: var(--olive); line-height: 1.8; }
     .feat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
     .feat-card {
-      background: var(--white); border-radius: 18px; padding: 24px 20px;
+      background: var(--white); border-radius: 18px; padding: 24px 20px; box-shadow: 0 2px 20px rgba(26,43,20,0.07); border: 1px solid rgba(26,43,20,0.06);
       border: 0.5px solid rgba(172,176,152,0.35); transition: all 0.3s; cursor: default;
     }
     .feat-card:hover { background: var(--palm); border-color: var(--palm); }
@@ -256,7 +256,7 @@
     .ls-img span { color: rgba(240,234,216,0.35); font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; text-align: center; padding: 10px; }
 
     /* STATS */
-    .lp-stats { background: var(--light-dark); padding: 60px 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .lp-stats { background: var(--wood-dark); padding: 60px 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
     .big-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; color: var(--cream); font-weight: 400; line-height: 1; }
     .big-num sup { font-size: 26px; color: var(--golden); }
     .big-lbl { font-size: 11px; color: rgba(240,234,216,0.45); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
@@ -311,7 +311,7 @@
     .bk-privacy { font-size: 11px; color: var(--palm-light); text-align: center; margin-top: 14px; line-height: 1.5; }
 
     /* FOOTER */
-    .lp-footer { background: var(--light-dark); padding: 60px 64px; }
+    .lp-footer { background: var(--wood-dark); padding: 60px 64px; }
     .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
     .ft-logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--cream); font-weight: 500; margin-bottom: 10px; }
     .ft-tag { font-size: 13px; color: rgba(240,234,216,0.45); line-height: 1.7; max-width: 260px; }
@@ -329,7 +329,7 @@
       .lp-nav-links { display: none; }
       .lp-hero, .lp-lifestyle .ls-inner, .loc-inner, .feat-header { grid-template-columns: 1fr; }
       .lp-hero { padding: 60px 24px; min-height: auto; }
-      .hero-h1 { font-size: 42px; }
+      .hero-h1 { font-size: 48px; }
       .pain-grid, .feat-grid { grid-template-columns: 1fr 1fr; }
       .lp-pain, .lp-features, .lp-location, .lp-booking { padding: 60px 24px; }
       .lp-lifestyle { padding: 0 24px 60px; }
