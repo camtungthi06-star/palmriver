@@ -10,17 +10,23 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     :root {
-      --cream: #F3EDD8;
-      --palm: #49441B;
-      --palm-mid: #5F5D28;
+      /* Base palette */
+      --cream:      #EDE5C5;
+      --palm:       #3D3B14;
+      --palm-mid:   #5F5D28;
       --palm-light: #8A8952;
-      --earthy: #523226;
-      --golden: #ECB95F;
-      --olive: #5F5D28;
-      --sunlit: #6B6930;
-      --white: #FFFFFF;
-      --water: #7CA3B8;
-      --sand: #C49060;
+      --earthy:     #4A2A14;
+      --golden:     #ECB95F;
+      --olive:      #5F5D28;
+      --sunlit:     #6B6930;
+      --white:      #FFFFFF;
+      --water:      #7CA3B8;
+      --sand:       #C49060;
+      /* 4-Element deep section backgrounds */
+      --earth-dark: #1C0E06;
+      --water-dark: #061A27;
+      --wood-dark:  #0D1809;
+      --light-dark: #1E1504;
     }
 
     @keyframes sway1 {
@@ -187,7 +193,7 @@
     .fc-val { font-family: 'Cormorant Garamond', serif; font-size: 21px; color: var(--palm); font-weight: 500; margin-top: 2px; }
 
     /* PAIN */
-    .lp-pain { background: var(--palm); padding: 96px 64px; }
+    .lp-pain { background: var(--water-dark); padding: 96px 64px; }
     .sec-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--golden); margin-bottom: 14px; font-weight: 500; }
     .pain-h2 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; color: var(--cream); line-height: 1.1; max-width: 680px; margin-bottom: 20px; }
     .pain-h2 em { font-style: italic; color: var(--palm-light); }
@@ -233,7 +239,7 @@
     /* LIFESTYLE */
     .lp-lifestyle { background: var(--cream); padding: 0 64px 96px; }
     .ls-inner {
-      background: var(--palm); border-radius: 28px; padding: 72px;
+      background: var(--wood-dark); border-radius: 28px; padding: 72px;
       display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
     }
     .ls-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--golden); margin-bottom: 16px; }
@@ -250,7 +256,7 @@
     .ls-img span { color: rgba(240,234,216,0.35); font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; text-align: center; padding: 10px; }
 
     /* STATS */
-    .lp-stats { background: var(--earthy); padding: 60px 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .lp-stats { background: var(--light-dark); padding: 60px 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
     .big-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; color: var(--cream); font-weight: 400; line-height: 1; }
     .big-num sup { font-size: 26px; color: var(--golden); }
     .big-lbl { font-size: 11px; color: rgba(240,234,216,0.45); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
@@ -269,7 +275,7 @@
     .loc-time { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--palm); font-weight: 400; margin-left: auto; }
 
     /* BOOKING */
-    .lp-booking { background: #242110; padding: 96px 64px; position: relative; overflow: hidden; }
+    .lp-booking { background: var(--earth-dark); padding: 96px 64px; position: relative; overflow: hidden; }
     .lp-booking::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 8% 60%, rgba(92,90,40,0.35) 0%, transparent 55%), radial-gradient(ellipse at 95% 95%, rgba(82,50,38,0.25) 0%, transparent 50%); pointer-events: none; }
     .bk-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
     .bk-eyebrow { display: flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--golden); margin-bottom: 22px; }
@@ -305,7 +311,7 @@
     .bk-privacy { font-size: 11px; color: var(--palm-light); text-align: center; margin-top: 14px; line-height: 1.5; }
 
     /* FOOTER */
-    .lp-footer { background: var(--earthy); padding: 60px 64px; }
+    .lp-footer { background: var(--earth-dark); padding: 60px 64px; }
     .ft-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
     .ft-logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--cream); font-weight: 500; margin-bottom: 10px; }
     .ft-tag { font-size: 13px; color: rgba(240,234,216,0.45); line-height: 1.7; max-width: 260px; }
