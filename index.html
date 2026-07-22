@@ -132,6 +132,7 @@
       background-image: url('img/anh 10.jpg');
       background-size: cover;
       background-position: center 30%;
+      background-attachment: fixed;
       opacity: 1;
     }
     .river-ripple { display: none; }
@@ -184,7 +185,21 @@
     .fc-val { font-family: 'Cormorant Garamond', serif; font-size: 21px; color: var(--palm); font-weight: 500; margin-top: 2px; }
 
     /* PAIN */
-    .lp-pain { background: var(--wood-dark); padding: 96px 64px; }
+    .lp-pain {
+      background: url('img/anh 10.jpg') center 30% / cover fixed;
+      padding: 96px 64px;
+      position: relative;
+    }
+    .lp-pain::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(3, 8, 3, 0.72);
+      pointer-events: none; z-index: 0;
+    }
+    .lp-pain .sec-tag,
+    .lp-pain .pain-h2,
+    .lp-pain .pain-sub,
+    .lp-pain .pain-grid { position: relative; z-index: 1; }
     .sec-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--golden); margin-bottom: 14px; font-weight: 500; }
     .pain-h2 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 400; color: var(--cream); line-height: 1.1; max-width: 680px; margin-bottom: 20px; }
     .pain-h2 em { font-style: italic; color: var(--palm-light); }
